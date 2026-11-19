@@ -1,0 +1,158 @@
+"""Language names for NLLB-200 codes, and a map from ISO 639-1 codes
+(used by the language detector) to NLLB codes.
+
+The app only offers codes that the loaded tokenizer actually supports,
+so a code listed here but missing from the model is simply hidden.
+"""
+
+NLLB_LANGUAGES = {
+    "ace_Arab": "Acehnese (Arabic script)", "ace_Latn": "Acehnese (Latin script)",
+    "acm_Arab": "Arabic (Mesopotamian)", "acq_Arab": "Arabic (Ta'izzi-Adeni)",
+    "aeb_Arab": "Arabic (Tunisian)", "afr_Latn": "Afrikaans",
+    "ajp_Arab": "Arabic (South Levantine)", "aka_Latn": "Akan",
+    "amh_Ethi": "Amharic", "apc_Arab": "Arabic (North Levantine)",
+    "arb_Arab": "Arabic (Modern Standard)", "arb_Latn": "Arabic (Romanized)",
+    "ars_Arab": "Arabic (Najdi)", "ary_Arab": "Arabic (Moroccan)",
+    "arz_Arab": "Arabic (Egyptian)", "asm_Beng": "Assamese",
+    "ast_Latn": "Asturian", "awa_Deva": "Awadhi", "ayr_Latn": "Aymara (Central)",
+    "azb_Arab": "Azerbaijani (South)", "azj_Latn": "Azerbaijani (North)",
+    "bak_Cyrl": "Bashkir", "bam_Latn": "Bambara", "ban_Latn": "Balinese",
+    "bel_Cyrl": "Belarusian", "bem_Latn": "Bemba", "ben_Beng": "Bengali",
+    "bho_Deva": "Bhojpuri", "bjn_Arab": "Banjar (Arabic script)",
+    "bjn_Latn": "Banjar (Latin script)", "bod_Tibt": "Tibetan (Standard)",
+    "bos_Latn": "Bosnian", "bug_Latn": "Buginese", "bul_Cyrl": "Bulgarian",
+    "cat_Latn": "Catalan", "ceb_Latn": "Cebuano", "ces_Latn": "Czech",
+    "cjk_Latn": "Chokwe", "ckb_Arab": "Kurdish (Central / Sorani)",
+    "crh_Latn": "Crimean Tatar", "cym_Latn": "Welsh", "dan_Latn": "Danish",
+    "deu_Latn": "German", "dik_Latn": "Dinka (Southwestern)", "dyu_Latn": "Dyula",
+    "dzo_Tibt": "Dzongkha", "ell_Grek": "Greek", "eng_Latn": "English",
+    "epo_Latn": "Esperanto", "est_Latn": "Estonian", "eus_Latn": "Basque",
+    "ewe_Latn": "Ewe", "fao_Latn": "Faroese", "fij_Latn": "Fijian",
+    "fin_Latn": "Finnish", "fon_Latn": "Fon", "fra_Latn": "French",
+    "fur_Latn": "Friulian", "fuv_Latn": "Fulfulde (Nigerian)",
+    "gaz_Latn": "Oromo (West Central)", "gla_Latn": "Scottish Gaelic",
+    "gle_Latn": "Irish", "glg_Latn": "Galician", "grn_Latn": "Guarani",
+    "guj_Gujr": "Gujarati", "hat_Latn": "Haitian Creole", "hau_Latn": "Hausa",
+    "heb_Hebr": "Hebrew", "hin_Deva": "Hindi", "hne_Deva": "Chhattisgarhi",
+    "hrv_Latn": "Croatian", "hun_Latn": "Hungarian", "hye_Armn": "Armenian",
+    "ibo_Latn": "Igbo", "ilo_Latn": "Ilocano", "ind_Latn": "Indonesian",
+    "isl_Latn": "Icelandic", "ita_Latn": "Italian", "jav_Latn": "Javanese",
+    "jpn_Jpan": "Japanese", "kab_Latn": "Kabyle", "kac_Latn": "Jingpho",
+    "kam_Latn": "Kamba", "kan_Knda": "Kannada", "kas_Arab": "Kashmiri (Arabic script)",
+    "kas_Deva": "Kashmiri (Devanagari)", "kat_Geor": "Georgian",
+    "knc_Arab": "Kanuri (Arabic script)", "knc_Latn": "Kanuri (Latin script)",
+    "kaz_Cyrl": "Kazakh", "kbp_Latn": "Kabiyè", "kea_Latn": "Kabuverdianu",
+    "khm_Khmr": "Khmer", "kik_Latn": "Kikuyu", "kin_Latn": "Kinyarwanda",
+    "kir_Cyrl": "Kyrgyz", "kmb_Latn": "Kimbundu", "kmr_Latn": "Kurdish (Northern / Kurmanji)",
+    "kon_Latn": "Kikongo", "kor_Hang": "Korean", "lao_Laoo": "Lao",
+    "lij_Latn": "Ligurian", "lim_Latn": "Limburgish", "lin_Latn": "Lingala",
+    "lit_Latn": "Lithuanian", "lmo_Latn": "Lombard", "ltg_Latn": "Latgalian",
+    "ltz_Latn": "Luxembourgish", "lua_Latn": "Luba-Kasai", "lug_Latn": "Ganda",
+    "luo_Latn": "Luo", "lus_Latn": "Mizo", "lvs_Latn": "Latvian",
+    "mag_Deva": "Magahi", "mai_Deva": "Maithili", "mal_Mlym": "Malayalam",
+    "mar_Deva": "Marathi", "min_Arab": "Minangkabau (Arabic script)",
+    "min_Latn": "Minangkabau (Latin script)", "mkd_Cyrl": "Macedonian",
+    "plt_Latn": "Malagasy (Plateau)", "mlt_Latn": "Maltese", "mni_Beng": "Meitei (Bengali script)",
+    "khk_Cyrl": "Mongolian (Halh)", "mos_Latn": "Mossi", "mri_Latn": "Maori",
+    "mya_Mymr": "Burmese", "nld_Latn": "Dutch", "nno_Latn": "Norwegian Nynorsk",
+    "nob_Latn": "Norwegian Bokmål", "npi_Deva": "Nepali", "nso_Latn": "Northern Sotho",
+    "nus_Latn": "Nuer", "nya_Latn": "Nyanja (Chichewa)", "oci_Latn": "Occitan",
+    "ory_Orya": "Odia", "pag_Latn": "Pangasinan", "pan_Guru": "Punjabi (Eastern)",
+    "pap_Latn": "Papiamento", "pes_Arab": "Persian (Western)", "pol_Latn": "Polish",
+    "por_Latn": "Portuguese", "prs_Arab": "Dari", "pbt_Arab": "Pashto (Southern)",
+    "quy_Latn": "Quechua (Ayacucho)", "ron_Latn": "Romanian", "run_Latn": "Rundi",
+    "rus_Cyrl": "Russian", "sag_Latn": "Sango", "san_Deva": "Sanskrit",
+    "sat_Olck": "Santali", "scn_Latn": "Sicilian", "shn_Mymr": "Shan",
+    "sin_Sinh": "Sinhala", "slk_Latn": "Slovak", "slv_Latn": "Slovenian",
+    "smo_Latn": "Samoan", "sna_Latn": "Shona", "snd_Arab": "Sindhi",
+    "som_Latn": "Somali", "sot_Latn": "Southern Sotho", "spa_Latn": "Spanish",
+    "als_Latn": "Albanian (Tosk)", "srd_Latn": "Sardinian", "srp_Cyrl": "Serbian",
+    "ssw_Latn": "Swati", "sun_Latn": "Sundanese", "swe_Latn": "Swedish",
+    "swh_Latn": "Swahili", "szl_Latn": "Silesian", "tam_Taml": "Tamil",
+    "tat_Cyrl": "Tatar", "tel_Telu": "Telugu", "tgk_Cyrl": "Tajik",
+    "tgl_Latn": "Tagalog", "tha_Thai": "Thai", "tir_Ethi": "Tigrinya",
+    "taq_Latn": "Tamasheq (Latin script)", "taq_Tfng": "Tamasheq (Tifinagh)",
+    "tpi_Latn": "Tok Pisin", "tsn_Latn": "Tswana", "tso_Latn": "Tsonga",
+    "tuk_Latn": "Turkmen", "tum_Latn": "Tumbuka", "tur_Latn": "Turkish",
+    "twi_Latn": "Twi", "tzm_Tfng": "Tamazight (Central Atlas)", "uig_Arab": "Uyghur",
+    "ukr_Cyrl": "Ukrainian", "umb_Latn": "Umbundu", "urd_Arab": "Urdu",
+    "uzn_Latn": "Uzbek (Northern)", "vec_Latn": "Venetian", "vie_Latn": "Vietnamese",
+    "war_Latn": "Waray", "wol_Latn": "Wolof", "xho_Latn": "Xhosa",
+    "ydd_Hebr": "Yiddish (Eastern)", "yor_Latn": "Yoruba", "yue_Hant": "Cantonese",
+    "zho_Hans": "Chinese (Simplified)", "zho_Hant": "Chinese (Traditional)",
+    "zsm_Latn": "Malay (Standard)", "zul_Latn": "Zulu",
+}
+
+# langid.py (ISO 639-1) -> NLLB code, for automatic source detection
+ISO_TO_NLLB = {
+    "af": "afr_Latn", "am": "amh_Ethi", "ar": "arb_Arab", "as": "asm_Beng", "az": "azj_Latn",
+    "be": "bel_Cyrl", "bg": "bul_Cyrl", "bn": "ben_Beng", "bs": "bos_Latn", "ca": "cat_Latn",
+    "cs": "ces_Latn", "cy": "cym_Latn", "da": "dan_Latn", "de": "deu_Latn", "dz": "dzo_Tibt",
+    "el": "ell_Grek", "en": "eng_Latn", "eo": "epo_Latn", "es": "spa_Latn", "et": "est_Latn",
+    "eu": "eus_Latn", "fa": "pes_Arab", "fi": "fin_Latn", "fo": "fao_Latn", "fr": "fra_Latn",
+    "ga": "gle_Latn", "gl": "glg_Latn", "gu": "guj_Gujr", "he": "heb_Hebr", "hi": "hin_Deva",
+    "hr": "hrv_Latn", "ht": "hat_Latn", "hu": "hun_Latn", "hy": "hye_Armn", "id": "ind_Latn",
+    "is": "isl_Latn", "it": "ita_Latn", "ja": "jpn_Jpan", "jv": "jav_Latn", "ka": "kat_Geor",
+    "kk": "kaz_Cyrl", "km": "khm_Khmr", "kn": "kan_Knda", "ko": "kor_Hang", "ku": "kmr_Latn",
+    "ky": "kir_Cyrl", "lb": "ltz_Latn", "lo": "lao_Laoo", "lt": "lit_Latn", "lv": "lvs_Latn",
+    "mg": "plt_Latn", "mk": "mkd_Cyrl", "ml": "mal_Mlym", "mn": "khk_Cyrl", "mr": "mar_Deva",
+    "ms": "zsm_Latn", "mt": "mlt_Latn", "nb": "nob_Latn", "ne": "npi_Deva", "nl": "nld_Latn",
+    "nn": "nno_Latn", "no": "nob_Latn", "oc": "oci_Latn", "or": "ory_Orya", "pa": "pan_Guru",
+    "pl": "pol_Latn", "ps": "pbt_Arab", "pt": "por_Latn", "qu": "quy_Latn", "ro": "ron_Latn",
+    "ru": "rus_Cyrl", "rw": "kin_Latn", "si": "sin_Sinh", "sk": "slk_Latn", "sl": "slv_Latn",
+    "sq": "als_Latn", "sr": "srp_Cyrl", "sv": "swe_Latn", "sw": "swh_Latn", "ta": "tam_Taml",
+    "te": "tel_Telu", "th": "tha_Thai", "tl": "tgl_Latn", "tr": "tur_Latn", "ug": "uig_Arab",
+    "uk": "ukr_Cyrl", "ur": "urd_Arab", "vi": "vie_Latn", "wa": "fra_Latn", "xh": "xho_Latn",
+    "zh": "zho_Hans", "zu": "zul_Latn",
+}
+
+RTL_SCRIPTS = {"Arab", "Hebr"}
+
+
+def is_rtl(code):
+    return code.split("_")[-1] in RTL_SCRIPTS
+
+
+# ---------------------------------------------------------------------------
+# Language-token formats for the other model families.
+# Keys are NLLB codes (used everywhere in the app); values are the codes each
+# model family expects. Only codes found in the loaded tokenizer are offered.
+# ---------------------------------------------------------------------------
+M2M100_CODES = {  # facebook/m2m100_*  (token form: __xx__)
+    "afr_Latn": "af", "amh_Ethi": "am", "arb_Arab": "ar", "ast_Latn": "ast", "azj_Latn": "az",
+    "bak_Cyrl": "ba", "bel_Cyrl": "be", "bul_Cyrl": "bg", "ben_Beng": "bn", "bos_Latn": "bs",
+    "cat_Latn": "ca", "ceb_Latn": "ceb", "ces_Latn": "cs", "cym_Latn": "cy", "dan_Latn": "da",
+    "deu_Latn": "de", "ell_Grek": "el", "eng_Latn": "en", "spa_Latn": "es", "est_Latn": "et",
+    "pes_Arab": "fa", "fuv_Latn": "ff", "fin_Latn": "fi", "fra_Latn": "fr", "gle_Latn": "ga",
+    "gla_Latn": "gd", "glg_Latn": "gl", "guj_Gujr": "gu", "hau_Latn": "ha", "heb_Hebr": "he",
+    "hin_Deva": "hi", "hrv_Latn": "hr", "hat_Latn": "ht", "hun_Latn": "hu", "hye_Armn": "hy",
+    "ind_Latn": "id", "ibo_Latn": "ig", "ilo_Latn": "ilo", "isl_Latn": "is", "ita_Latn": "it",
+    "jpn_Jpan": "ja", "jav_Latn": "jv", "kat_Geor": "ka", "kaz_Cyrl": "kk", "khm_Khmr": "km",
+    "kan_Knda": "kn", "kor_Hang": "ko", "ltz_Latn": "lb", "lug_Latn": "lg", "lin_Latn": "ln",
+    "lao_Laoo": "lo", "lit_Latn": "lt", "lvs_Latn": "lv", "plt_Latn": "mg", "mkd_Cyrl": "mk",
+    "mal_Mlym": "ml", "khk_Cyrl": "mn", "mar_Deva": "mr", "zsm_Latn": "ms", "mya_Mymr": "my",
+    "npi_Deva": "ne", "nld_Latn": "nl", "nob_Latn": "no", "nso_Latn": "ns", "oci_Latn": "oc",
+    "ory_Orya": "or", "pan_Guru": "pa", "pol_Latn": "pl", "pbt_Arab": "ps", "por_Latn": "pt",
+    "ron_Latn": "ro", "rus_Cyrl": "ru", "snd_Arab": "sd", "sin_Sinh": "si", "slk_Latn": "sk",
+    "slv_Latn": "sl", "som_Latn": "so", "als_Latn": "sq", "srp_Cyrl": "sr", "ssw_Latn": "ss",
+    "sun_Latn": "su", "swe_Latn": "sv", "swh_Latn": "sw", "tam_Taml": "ta", "tha_Thai": "th",
+    "tgl_Latn": "tl", "tsn_Latn": "tn", "tur_Latn": "tr", "ukr_Cyrl": "uk", "urd_Arab": "ur",
+    "uzn_Latn": "uz", "vie_Latn": "vi", "wol_Latn": "wo", "xho_Latn": "xh", "ydd_Hebr": "yi",
+    "yor_Latn": "yo", "zho_Hans": "zh", "zul_Latn": "zu",
+}
+
+MBART50_CODES = {  # facebook/mbart-large-50-many-to-many-mmt
+    "arb_Arab": "ar_AR", "ces_Latn": "cs_CZ", "deu_Latn": "de_DE", "eng_Latn": "en_XX",
+    "spa_Latn": "es_XX", "est_Latn": "et_EE", "fin_Latn": "fi_FI", "fra_Latn": "fr_XX",
+    "guj_Gujr": "gu_IN", "hin_Deva": "hi_IN", "ita_Latn": "it_IT", "jpn_Jpan": "ja_XX",
+    "kaz_Cyrl": "kk_KZ", "kor_Hang": "ko_KR", "lit_Latn": "lt_LT", "lvs_Latn": "lv_LV",
+    "mya_Mymr": "my_MM", "npi_Deva": "ne_NP", "nld_Latn": "nl_XX", "ron_Latn": "ro_RO",
+    "rus_Cyrl": "ru_RU", "sin_Sinh": "si_LK", "tur_Latn": "tr_TR", "vie_Latn": "vi_VN",
+    "zho_Hans": "zh_CN", "afr_Latn": "af_ZA", "azj_Latn": "az_AZ", "ben_Beng": "bn_IN",
+    "pes_Arab": "fa_IR", "heb_Hebr": "he_IL", "hrv_Latn": "hr_HR", "ind_Latn": "id_ID",
+    "kat_Geor": "ka_GE", "khm_Khmr": "km_KH", "mkd_Cyrl": "mk_MK", "mal_Mlym": "ml_IN",
+    "khk_Cyrl": "mn_MN", "mar_Deva": "mr_IN", "pol_Latn": "pl_PL", "pbt_Arab": "ps_AF",
+    "por_Latn": "pt_XX", "swe_Latn": "sv_SE", "swh_Latn": "sw_KE", "tam_Taml": "ta_IN",
+    "tel_Telu": "te_IN", "tha_Thai": "th_TH", "tgl_Latn": "tl_XX", "ukr_Cyrl": "uk_UA",
+    "urd_Arab": "ur_PK", "xho_Latn": "xh_ZA", "glg_Latn": "gl_ES", "slv_Latn": "sl_SI",
+}

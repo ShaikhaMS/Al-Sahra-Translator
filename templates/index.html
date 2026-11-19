@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Al-Sahra Translator · Abu Dhabi University</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="topbar"></div>
+<main class="wrap">
+  <header class="brand">
+    <img src="{{ url_for('static', filename='adu-logo.png') }}" alt="Abu Dhabi University" class="logo">
+    <div class="brand-text">
+      <h1>Al-Sahra <b>Translator</b></h1>
+      <p>Live translation across 200 languages with Transformer models</p>
+    </div>
+  </header>
+
+  <div id="banner" class="banner">Loading the Transformer…</div>
+
+  <section class="card">
+    <div class="modelbar">
+      <label for="model">Transformer</label>
+      <select id="model" aria-label="Choose the Transformer model"></select>
+      <span id="model-note" class="muted"></span>
+    </div>
+
+    <div class="langbar">
+      <select id="source" aria-label="Source language" disabled></select>
+      <button id="swap" class="icon-btn" title="Swap languages" aria-label="Swap languages">&#8644;</button>
+      <select id="target" aria-label="Target language" disabled></select>
+    </div>
+
+    <div class="panes">
+      <div class="pane">
+        <textarea id="src" placeholder="Type or paste text here…" maxlength="5000" autofocus></textarea>
+        <div class="pane-foot">
+          <span id="detected" class="muted"></span>
+          <span class="spacer"></span>
+          <span id="count" class="muted">0 / 5000</span>
+          <button id="clear" class="text-btn" title="Clear">Clear</button>
+        </div>
+      </div>
+      <div class="pane out">
+        <div id="out" class="output" aria-live="polite"><span class="placeholder">Translation</span></div>
+        <div class="pane-foot">
+          <span id="status" class="muted"></span>
+          <span class="spacer"></span>
+          <button id="copy" class="text-btn" title="Copy translation">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="options">
+      <label class="switch"><input type="checkbox" id="live" checked><span></span> Translate while typing</label>
+      <div class="seg" role="radiogroup" aria-label="Quality">
+        <button data-q="fast" class="active">Fast</button>
+        <button data-q="better">Better quality</button>
+      </div>
+      <button id="go" class="primary">Translate</button>
+    </div>
+  </section>
+
+  <section class="card score-card">
+    <div class="score-head">
+      <h2>Score this translation</h2>
+      <span class="muted">Paste a reference translation (one line per output line) to compute BLEU and chrF</span>
+    </div>
+    <div class="score-body">
+      <textarea id="ref" class="ref-box" dir="auto" placeholder="Reference translation…"></textarea>
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-name">BLEU</span>
+          <span id="bleu" class="metric-value">–</span>
+          <span id="bleu-detail" class="metric-detail">word n-gram overlap (1–4)</span>
+        </div>
+        <div class="metric">
+          <span class="metric-name">chrF</span>
+          <span id="chrf" class="metric-value">–</span>
+          <span id="chrf-detail" class="metric-detail">character n-gram F-score (1–6)</span>
+        </div>
+      </div>
+    </div>
+    <p id="score-msg" class="muted score-msg"></p>
+  </section>
+
+  <footer>
+    <div class="foot-text">
+      <div>Developed by <b>Shaikha Mohammed Al Shehyari</b> &middot; DEN702: Advanced Research Communication (Fall 2026)</div>
+      <div class="foot-sub">College of Engineering, Abu Dhabi University</div>
+    </div>
+  </footer>
+</main>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
